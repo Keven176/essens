@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essens | Perfumes y Decants</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111111;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #000000;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            background-color: #d4af37;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #f0d77a;
+            color: #000000;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d4af37;
+        }
+
+        /*portada*/
+        header {
+            background-color: #000000;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        /*secciones*/
+        section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        /*catalogo*/
+        .producto {
+            background-color: #000000;
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            width: 250px;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .producto img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .precio {
+            color: #d4af37;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .boton {
+            background-color: #d4af37;
+            color: #000000;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .boton:hover {
+            background-color: #f0d77a;
+        }
+
+        /*tabla de decants*/
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid #d4af37;
+            padding: 10px 25px;
+        }
+
+        th {
+            background-color: #d4af37;
+            color: #000000;
+        }
+
+        /*mapa*/
+        .mapa {
+            width: 100%;
+            height: 350px;
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+        }
+
+        /*galeria*/
+        .galeria img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            margin: 5px;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+
+        a {
+            color: #d4af37;
+        }
+
+        /*formulario*/
+        .formulario {
+            max-width: 450px;
+            margin: 25px auto 0 auto;
+            text-align: left;
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .formulario label {
+            display: block;
+            color: #d4af37;
+            margin-top: 12px;
+        }
+
+        .formulario input,
+        .formulario select,
+        .formulario textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px;
+            margin-top: 5px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 1px solid #d4af37;
+        }
+
+        .formulario button {
+            margin-top: 15px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #000000;
+            color: #d4af37;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- menu -->
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#galeria">Galería</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- portada -->
+    <header id="inicio">
+        <h1>ESSENS</h1>
+        <p>Perfumes originales y decants en Zapotiltic, Jalisco.</p>
+        <a class="boton" href="#catalogo">Ver catálogo</a>
+    </header>
+
+    <section id="nosotros">
+        <h2>Nosotros</h2>
+        <p>
+            Somos un negocio pequeño de Zapotiltic que vende perfumes originales en botella y en decants,
+            para que puedas probar una fragancia sin comprar la botella completa.
+        </p>
+    </section>
+
+    <section id="catalogo">
+        <h2>Catálogo</h2>
+
+        <div class="producto">
+            <img src="img/9am.webp" alt="9 AM Dive">
+            <h3>9 AM Dive</h3>
+            <p>Fresco y acuático. Para el día y el calor.</p>
+            <p class="precio">$600</p>
+            <a class="boton" href="producto-9am.html">Ver más</a>
+        </div>
+
+        <div class="producto">
+            <img src="img/9pm.webp" alt="9 PM">
+            <h3>9 PM</h3>
+            <p>Dulce y especiado. Para la noche y el frío.</p>
+            <p class="precio">$600</p>
+            <a class="boton" href="producto-9pm.html">Ver más</a>
+        </div>
+
+        <h2>Decants</h2>
+        <table>
+            <tr>
+                <th>Cantidad</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>1 decant</td>
+                <td>$60</td>
+            </tr>
+            <tr>
+                <td>2 decants</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>3 decants</td>
+                <td>$160</td>
+            </tr>
+        </table>
+        <a class="boton" href="decants.html">Armar mis decants</a>
+    </section>
+
+    <section id="galeria">
+        <h2>Galería</h2>
+        <div class="galeria">
+            <img src="img/9am.webp" alt="9 AM Dive">
+            <img src="img/9pm.webp" alt="9 PM">
+            <img src="img/decants.webp" alt="Decants" style="object-fit: contain;">
+        </div>
+    </section>
+
+    <section id="ubicacion">
+        <h2>Ubicación y envíos</h2>
+        <p>Chapultepec 5, Colinde, Zapotiltic, Jalisco.</p>
+        <iframe class="mapa" src="https://maps.google.com/maps?q=19.631801,-103.4110375&z=17&output=embed" loading="lazy" title="Ubicación de Essens"></iframe>
+        <p><a href="https://maps.app.goo.gl/ysW2Y3tWujQ8wGFV9" target="_blank">Abrir en Google Maps</a></p>
+        <p>Hacemos envíos a domicilio en Zapotiltic.</p>
+        <p>Horario de envíos: 9:00 a.m. a 12:00 p.m.</p>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>WhatsApp: <a href="https://wa.me/523411481759" target="_blank">341 148 1759</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/esens_fragance09" target="_blank">@esens_fragance09</a></p>
+
+        <!-- formulario -->
+        <form class="formulario" onsubmit="enviarFormulario(event)">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" required>
+
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" required>
+
+            <label for="edad">Edad</label>
+            <select id="edad">
+                <option>Menos de 18</option>
+                <option>18 a 25</option>
+                <option>26 a 35</option>
+                <option>36 o más</option>
+            </select>
+
+            <label for="interes">¿Qué te interesa?</label>
+            <select id="interes">
+                <option>9 AM Dive</option>
+                <option>9 PM</option>
+                <option>Decants</option>
+                <option>Otro</option>
+            </select>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" rows="5" placeholder="Escribe tu pedido o tu duda"></textarea>
+
+            <button type="submit" class="boton">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 Essens · Zapotiltic, Jalisco</p>
+    </footer>
+
+    <script>
+        function enviarFormulario(e) {
+            e.preventDefault();
+
+            const mensaje =
+                "Hola, soy " + document.getElementById("nombre").value + "\n" +
+                "Correo: " + document.getElementById("correo").value + "\n" +
+                "Edad: " + document.getElementById("edad").value + "\n" +
+                "Me interesa: " + document.getElementById("interes").value + "\n" +
+                document.getElementById("mensaje").value;
+
+            window.open("https://wa.me/523411481759?text=" + encodeURIComponent(mensaje), "_blank");
+        }
+    </script>
+
+</body>
+</html>

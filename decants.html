@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decants | Essens</title>
+    <link rel="stylesheet" href="producto.css">
+</head>
+<body>
+
+    <!-- menu de navegacion -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#catalogo">Catálogo</a>
+        <a href="index.html#galeria">Galería</a>
+        <a href="index.html#ubicacion">Ubicación</a>
+        <a href="index.html#contacto">Contacto</a>
+    </nav>
+
+    <a class="regresar" href="index.html#catalogo">← Regresar al catálogo</a>
+
+    <section class="decants-pagina">
+        <h1 class="dorado">Arma tus decants</h1>
+        <p>Prueba tus perfumes favoritos sin comprar la botella completa. Puedes llevar del mismo o combinarlos.</p>
+
+        <!-- paso 1 -->
+        <div class="paso">
+            <h3>1. ¿Cuántos quieres?</h3>
+            <div class="cantidades">
+                <button class="cantidad elegida" onclick="elegirCantidad(1)">1 decant <b>$60</b></button>
+                <button class="cantidad" onclick="elegirCantidad(2)">2 decants <b>$100</b></button>
+                <button class="cantidad" onclick="elegirCantidad(3)">3 decants <b>$160</b></button>
+            </div>
+        </div>
+
+        <!-- paso 2 -->
+        <div class="paso">
+            <h3>2. Escoge el perfume de cada uno</h3>
+            <div class="espacios" id="espacios"></div>
+        </div>
+
+        <!-- resumen -->
+        <div class="paso">
+            <h3>Tu pedido</h3>
+            <p class="resumen" id="resumen"></p>
+            <p class="total" id="total"></p>
+            <a class="boton" id="pedir" href="#" target="_blank">Pedir por WhatsApp</a>
+        </div>
+
+        <!-- perfumes disponibles -->
+        <div class="mini-perfumes">
+            <div class="mini">
+                <img src="img/9am.webp" alt="9 AM Dive">
+                <h3 class="dorado">9 AM Dive</h3>
+                <p>Fresco y acuático, con limón y menta. Para el día y el calor. Dura de 6 a 8 horas.</p>
+                <a href="producto-9am.html">Ver más</a>
+            </div>
+            <div class="mini">
+                <img src="img/9pm.webp" alt="9 PM">
+                <h3 class="dorado">9 PM</h3>
+                <p>Dulce y especiado, con vainilla y canela. Para la noche y el frío. Dura de 6 a 8 horas.</p>
+                <a href="producto-9pm.html">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Essens · Zapotiltic, Jalisco</p>
+    </footer>
+
+    <script>
+        const precios = { 1: 60, 2: 100, 3: 160 };
+        const perfumes = ["9 AM Dive", "9 PM"];
+        let cantidad = 1;
+
+        function elegirCantidad(n) {
+            cantidad = n;
+
+            // marcar el boton elegido
+            const botones = document.querySelectorAll(".cantidad");
+            botones.forEach(function (boton, i) {
+                boton.classList.toggle("elegida", i + 1 === n);
+            });
+
+            // crear un select por cada decant
+            const espacios = document.getElementById("espacios");
+            espacios.innerHTML = "";
+            for (let i = 1; i <= n; i++) {
+                let opciones = "";
+                perfumes.forEach(function (p) {
+                    opciones += "<option>" + p + "</option>";
+                });
+                espacios.innerHTML +=
+                    '<label class="espacio">Decant ' + i +
+                    '<select onchange="actualizarResumen()">' + opciones + "</select></label>";
+            }
+
+            actualizarResumen();
+        }
+
+        function actualizarResumen() {
+            // contar cuantos hay de cada perfume
+            const cuenta = {};
+            document.querySelectorAll("#espacios select").forEach(function (s) {
+                cuenta[s.value] = (cuenta[s.value] || 0) + 1;
+            });
+
+            let texto = "";
+            for (const p in cuenta) {
+                texto += cuenta[p] + " × " + p + "<br>";
+            }
+
+            document.getElementById("resumen").innerHTML = texto;
+            document.getElementById("total").textContent = "Total: $" + precios[cantidad];
+
+            // armar el mensaje de whatsapp con el pedido
+            let mensaje = "Hola, quiero " + cantidad + " decant(s):\n";
+            for (const p in cuenta) {
+                mensaje += cuenta[p] + " x " + p + "\n";
+            }
+            mensaje += "Total: $" + precios[cantidad];
+            document.getElementById("pedir").href =
+                "https://wa.me/523411481759?text=" + encodeURIComponent(mensaje);
+        }
+
+        elegirCantidad(1);
+    </script>
+
+</body>
+</html>
